@@ -1,4 +1,4 @@
-FROM daocloud.io/library/:6.6
+FROM daocloud.io/library/centos:6.6
 
 RUN yum -y update && yum -y upgrade
 
