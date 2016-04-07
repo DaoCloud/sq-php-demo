@@ -2,7 +2,7 @@
 FROM daocloud.io/library/php:5.3-apache
 
 COPY docker-php-ext-* /usr/local/bin/
-RUN chmod +x /usr/local/bin/docker-php-ext-*
+RUN chown root /usr/local/bin/docker-php-ext-*
 
 # PHP Core Extensions 
 # 
