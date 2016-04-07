@@ -14,7 +14,9 @@ RUN yum install -y php \
                   php-bcmath \
                   ImageMagick \
                   ImageMagick-devel \
-                  memcached
+                  memcached \
+                  tar \
+                  curl 
 
 COPY mcrypt-2.6.8.tar.gz /
 WORKDIR /
