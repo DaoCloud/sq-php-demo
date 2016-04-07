@@ -1,5 +1,5 @@
 # Base image With Apache
-FROM php:5.3.2-apache
+FROM php:5.3-apache
 
 # PHP Core Extensions
 # 
