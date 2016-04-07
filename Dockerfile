@@ -18,7 +18,7 @@ RUN yum install -y php \
                   tar \
                   curl 
 
-RUN yum install -y gcc
+RUN yum install -y gcc g++
 
 COPY ./lib /lib
 WORKDIR /lib
