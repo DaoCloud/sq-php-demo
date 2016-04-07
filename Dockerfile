@@ -20,7 +20,6 @@ RUN chmod +x /usr/local/bin/docker-php-ext-*
 #     && docker-php-ext-install -j$(nproc) gd
 
 RUN apt-get update && apt-get install -y \
-					libapache2-mod-php5 \
 					libmcrypt-dev \
 					libz-dev \
 					php5-mysql \
