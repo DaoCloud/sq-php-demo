@@ -18,25 +18,25 @@ RUN yum install -y php \
                   tar \
                   curl 
 
-RUN yum install -y gcc g++
+RUN yum install -y gcc gcc-c++.x86_64
 
 COPY ./lib /lib
 WORKDIR /lib
 
-# RUN tar -zxvf libmcrypt-2.5.8.tar.gz \ 
-#         && cd libmcrypt-2.5.8 \ 
-#         && ./configure \
-#         && make && make install 
+RUN tar -zxvf libmcrypt-2.5.8.tar.gz \ 
+        && cd libmcrypt-2.5.8 \ 
+        && ./configure \
+        && make && make install 
 
-# RUN tar -zxvf mhash-0.9.9.9.tar.gz \ 
-#         && cd mhash-0.9.9.9 \ 
-#         && ./configure \
-#         && make && make install 
+RUN tar -zxvf mhash-0.9.9.9.tar.gz \ 
+        && cd mhash-0.9.9.9 \ 
+        && ./configure \
+        && make && make install 
 
-# RUN tar -zxvf mcrypt-2.6.8.tar.gz \ 
-#         && cd mcrypt-2.6.8 \ 
-#         && LD_LIBRARY_PATH=/usr/local/lib ./configure \
-#         && make && make install 
+RUN tar -zxvf mcrypt-2.6.8.tar.gz \ 
+        && cd mcrypt-2.6.8 \ 
+        && LD_LIBRARY_PATH=/usr/local/lib ./configure \
+        && make && make install 
 
 COPY src/ /var/www/html
 
