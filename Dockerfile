@@ -1,11 +1,6 @@
 # Base image With Apache
 FROM daocloud.io/library/php:5.3-apache
 
-COPY docker-php-ext-* /usr/local/bin/
-
-RUN chown root:staff /usr/local/bin/docker-php-ext-*
-RUN chmod 777 /usr/local/bin/docker-php-ext-*
-
 # PHP Core Extensions 
 # 
 # For example, if you want to have a PHP-FPM image with iconv, 
@@ -26,10 +21,10 @@ RUN apt-get update && apt-get install -y \
 					libz-dev \
 					php5-mysql \
 					php5-curl \
-					curl \
-    && docker-php-ext-install -j$(nproc) iconv mcrypt mbstring zip\
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd
+					curl
+    # && docker-php-ext-install -j$(nproc) iconv mcrypt mbstring zip\
+    # && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    # && docker-php-ext-install -j$(nproc) gd
 
 
 
