@@ -1,2 +1,3 @@
-
-<?php echo 'Hello Docker' ?>
+<?php 
+	phpinfo() 
+?>
