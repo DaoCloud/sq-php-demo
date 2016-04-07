@@ -18,6 +18,8 @@ RUN yum install -y php \
                   tar \
                   curl 
 
+RUN yum install -y gcc
+
 COPY mcrypt-2.6.8.tar.gz /
 WORKDIR /
 
