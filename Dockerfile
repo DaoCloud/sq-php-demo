@@ -6,13 +6,13 @@ RUN  yum install -y httpd
 EXPOSE 80 
 
 RUN yum install -y php \
-									php-mbstring \
-									php-mysql \
-									php-devel \
-									php-mcrypt \
-									php-bcmath \
-									ImageMagick \
-									memcached
+                  php-mbstring \
+                  php-mysql \
+                  php-devel \
+                  php-mcrypt \
+                  php-bcmath \
+                  ImageMagick \
+                  memcached
 
 COPY src/ /var/www/html
 
