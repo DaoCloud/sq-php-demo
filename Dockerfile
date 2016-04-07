@@ -2,6 +2,7 @@
 FROM daocloud.io/library/php:5.3-apache
 
 COPY docker-php-ext-* /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-php-ext-*
 
 # PHP Core Extensions 
 # 
@@ -19,6 +20,7 @@ COPY docker-php-ext-* /usr/local/bin/
 #     && docker-php-ext-install -j$(nproc) gd
 
 RUN apt-get update && apt-get install -y \
+					libapache2-mod-php5 \
 					libmcrypt-dev \
 					libz-dev \
 					php5-mysql \
@@ -27,6 +29,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) iconv mcrypt mbstring zip\
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd
+
 
 
 # PECL extensions
