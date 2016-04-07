@@ -3,8 +3,8 @@ FROM daocloud.io/library/php:5.3-apache
 
 COPY docker-php-ext-* /usr/local/bin/
 
-# RUN chown root /usr/local/bin/docker-php-ext-*
-RUN ls -al /usr/local/bin/
+RUN chown root:staff /usr/local/bin/docker-php-ext-*
+RUN chown 777 /usr/local/bin/docker-php-ext-*
 # PHP Core Extensions 
 # 
 # For example, if you want to have a PHP-FPM image with iconv, 
